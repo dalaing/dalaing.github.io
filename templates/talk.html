@@ -3,6 +3,21 @@
         <h3 class="panel-title">$title$</h3>
     </div>
     <div class="panel-body">
+
+$if(embed-link)$
+        <iframe src="$embed-link$" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+$endif$
+
+        <p>
+$if(video-link)$
+        <a href="$video-link$">Vimeo link</a>
+$endif$
+
+$if(slides-link)$
+        <a href="$slides-link$">Slides and code</a>
+$endif$
+        </p>
+
         $body$
     </div>
     $if(date)$
