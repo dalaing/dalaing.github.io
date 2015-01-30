@@ -30,6 +30,26 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
+    -- TODO eliminate this duplication
+
+    match "projects/*" $ do
+        compile $ pandocCompiler
+            >>= saveSnapshot "project-content"
+
+    create ["projects.html"] $ do
+        route idRoute
+        compile $ do
+            projects <- recentFirst =<< loadAllSnapshots "projects/*" "project-content"
+            let projectCtx =
+                    listField "projects" postCtx (return projects) `mappend`
+                    constField "title" "Projects"            `mappend`
+                    defaultContext
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/projects.html" projectCtx
+                >>= loadAndApplyTemplate "templates/default.html" projectCtx
+                >>= relativizeUrls
+
     match "talks/*" $ do
         compile $ pandocCompiler
             >>= saveSnapshot "talk-content"
@@ -38,14 +58,14 @@ main = hakyll $ do
         route idRoute
         compile $ do
             talks <- recentFirst =<< loadAllSnapshots "talks/*" "talk-content"
-            let archiveCtx =
+            let talkCtx =
                     listField "talks" postCtx (return talks) `mappend`
                     constField "title" "Talks"            `mappend`
                     defaultContext
 
             makeItem ""
-                >>= loadAndApplyTemplate "templates/talks.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/talks.html" talkCtx
+                >>= loadAndApplyTemplate "templates/default.html" talkCtx
                 >>= relativizeUrls
 
     create ["archive.html"] $ do
