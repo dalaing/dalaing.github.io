@@ -15,12 +15,15 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    -- static pages go here
+    -- static pages go here, possibly need to add internal page name
+    -- metadata to handle the page-active field
     match (fromList["about.md"]) $ do
         route   $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
+        compile $ do
+            let aboutCtx = constField "about-active" "" `mappend` defaultContext
+            pandocCompiler
+              >>= loadAndApplyTemplate "templates/default.html" aboutCtx
+              >>= relativizeUrls
 
     match "posts/*" $ do
         route $ setExtension "html"
@@ -43,6 +46,7 @@ main = hakyll $ do
             let projectCtx =
                     listField "projects" postCtx (return projects) `mappend`
                     constField "title" "Projects"            `mappend`
+                    constField "projects-active" ""           `mappend`
                     defaultContext
 
             makeItem ""
@@ -61,6 +65,7 @@ main = hakyll $ do
             let talkCtx =
                     listField "talks" postCtx (return talks) `mappend`
                     constField "title" "Talks"            `mappend`
+                    constField "talks-active" ""          `mappend`
                     defaultContext
 
             makeItem ""
@@ -75,6 +80,7 @@ main = hakyll $ do
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archives"            `mappend`
+                    constField "archive-active" ""           `mappend`
                     defaultContext
 
             makeItem ""
@@ -87,16 +93,21 @@ main = hakyll $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAllSnapshots "posts/*" "post-content"
-            let moreCtx = if (length posts >= 10) then constField "more" "more" else mempty
-            let indexCtx =
+            let
+                moreCtx = 
+                    if (length posts >= 10)
+                       then constField "more" ""
+                       else mempty
+                indexCtx =
                     moreCtx `mappend`
                     listField "posts" postCtx (return . take 10 $ posts) `mappend`
                     constField "title" "Home"                `mappend`
+                    constField "home-active" ""              `mappend`
                     defaultContext
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler
