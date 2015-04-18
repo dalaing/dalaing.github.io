@@ -1,7 +1,7 @@
 ---
 title: Free Monads are good for you
 location: BFPG
-date: 2013-04-22
+date: 2014-04-22
 embed-link: http://player.vimeo.com/video/92992647
 video-link: http://vimeo.com/92992647
 slides-link: https://github.com/dalaing/bfpg-2014-04

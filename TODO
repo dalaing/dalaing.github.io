@@ -1,0 +1,22 @@
+
+- add a page / set of entries for the reading list
+  - split into read / reading / reading soon
+
+- change to index-less urls (a la Yann)?
+
+- generate a scheme to have posts / talks / projects with a leading underscore published in draft form?
+  - no underscore -> talks
+  - all -> _talks
+
+- generate a feed from posts and talks and projects?
+
+- configure hakyll to use deploy.sh?
+
+- make the header more mobile friendly?
+
+- look into an iframe for the header / menu
+  - add drop downs in the header for posts
+    - use submenus for year / month, badges for counts?
+  - probably more useful for blog series
+  - although affix / scrollspy might be better
+
