@@ -6,7 +6,7 @@ title: About
 
 My name is Dave Laing.
 
-I'm currently a Senior Software Engineer for Skedulo, writing Scala and Scalaz to keep the scheduling engine ticking over.
+I'm currently a Senior Software Engineer for [Skedulo](http://skedulo.com/), writing Scala and Scalaz to keep the scheduling engine ticking over.
 
 In the past I've done Java, Python and C++ as various places, and I've also done a Phd in Computer Science.
 
