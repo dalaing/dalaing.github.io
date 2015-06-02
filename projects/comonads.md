@@ -1,7 +1,7 @@
 ---
 title: Cofun with cofree comonads
 date: 2015-05-22
-link: http://dalaing.org/cofun
+link: http://dlaing.org/cofun
 ---
 
 I've recently given a talk on cofree comonads at YOW! Lambda Jam 2015, and there's a lot of material that I'm excited about and didn't have time to get into during the talk slot.
