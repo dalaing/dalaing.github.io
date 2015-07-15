@@ -6,7 +6,7 @@ title: About
 
 My name is Dave Laing.
 
-I'm currently a Senior Software Engineer for [Skedulo](http://skedulo.com/), writing Scala and Scalaz to keep the scheduling engine ticking over,
+I'm currently a Senior Software Engineer for [Skedulo](http://skedulo.com/), writing Scala and Scalaz to keep the scheduling engine ticking over.
 
 I'm also a co-organizer of [BFPG](http://www.bfpg.org), aka the Brisbane Functional Programming Group.
 If you're in or visiting Brisbane and interested in functional programming, you should come along.
