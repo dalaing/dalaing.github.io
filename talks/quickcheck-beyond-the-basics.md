@@ -1,5 +1,5 @@
 ---
-title: QuickCheck: Beyond the Basics
+title: QuickCheck - Beyond the Basics
 location: Lambda Jam
 date: 2014-05-09
 embed-link: https://www.youtube.com/embed/qNeRZS8ZCKw
