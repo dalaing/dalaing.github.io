@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 cp -r _site/* deploy/
 pushd deploy
 git add --all

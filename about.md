@@ -4,9 +4,9 @@ title: About
 
 ### Who I am
 
-My name is Dave Laing.
+My name is Dave Laing.  I'm currently a Senior Functional Programmer at the Data61 FP Lab. 
 
-I've been programming since 2002, variously using Scala, Java, Python, x86 assembly and C++.
+I've been programming professionally since 2002, variously using Scala, Java, Python, x86 assembly and C++.
 There was a PhD in Computer Science somewhere in the middle.
 
 I'm also a co-organizer of [BFPG](http://www.bfpg.org), aka the Brisbane Functional Programming Group.
