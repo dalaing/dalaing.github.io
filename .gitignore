@@ -1,6 +1,7 @@
 .cabal-sandbox
 cabal.sandbox.config
+cabal.project.local*
 dist
-_site
+dist-newstyle
 _cache
 deploy
